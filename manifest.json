@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Your Extension",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/logo128.png",
+      "96": "icons/logo96.png"
+    }
+  },
+  "icons": {
+    "128": "icons/logo128.png",
+    "96": "icons/logo96.png"
+  },
+  "type": "module",
+  "content_security_policy": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'",
+  "web_accessible_resources": [
+    "shorten.js"
+  ]
+}
