@@ -1,12 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            width: 300px;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #010409;
+            margin: 0;
+            color: #e2e8f0;
+        }
+
+        h1 {
+            color: #e2e8f0;
+            font-size: 1.5rem;
+            margin: 0 0 20px 0;
+            text-align: center;
+            border-bottom: 2px solid #1e293b;
+            padding-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #3b82f6;
+            color: white;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button:hover {
+            background-color: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            transform: translateY(0px);
+        }
+
+        button h3 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        #shortenedURL {
+            display: block;
+            padding: 10px;
+            margin: 8px 0;
+            background-color: #010409;
+            border: 1px solid #2f353c;
+            border-radius: 6px;
+            color: #e2e8f0;
+            text-decoration: none;
+            word-break: break-all;
+            text-align: center;
+        }
+
+        #shortenedURL:empty {
+            display: none;
+        }
+
+        #shortenedURL:hover {
+            background-color: #334155;
+        }
+
+        #copyButton {
+            background-color: #10b981;
+        }
+
+        #copyButton:hover {
+            background-color: #059669;
+        }
+
+        /* Additional styles for better dark mode experience */
+        ::selection {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
 </head>
 <body>
-    <h1>Xurl.app - Link Shortener</h1>
-    <button id="getCurrentURLButton"><h3>get currentURL</h3></button>
+    <h1>xUrl.app</h1>
+    <button id="getCurrentURLButton">
+        <h3>Shorten Current URL</h3>
+    </button>
+    <a id="shortenedURL"></a>
+    <button id="copyButton">
+        <h3>Copy</h3>
+    </button>
     <script src="popup.js" type="module"></script>
 </body>
 </html>

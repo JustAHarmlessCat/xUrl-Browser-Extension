@@ -1,7 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Your Extension",
+  "name": "xUrl.app - URL Shortener",
   "version": "1.0",
+  "description": "Shorten URLs with xUrl.app",
   "permissions": [
     "activeTab",
     "tabs"

@@ -1,10 +1,15 @@
-import { currentTab } from './shorten.js';
+import { currentTab } from "./shorten.js";
 
-document.getElementById('getCurrentURLButton').addEventListener('click', async () => {
-    console.log('Button clicked');
+document
+    .getElementById("copyButton")
+    .style.display = "none";
+
+document
+  .getElementById("getCurrentURLButton")
+  .addEventListener("click", async () => {
     try {
-        currentTab();
+      currentTab();
     } catch (error) {
-        console.error('Error calling currentTab function:', error);
+      console.error("Error calling currentTab function:", error);
     }
-});
+  });
