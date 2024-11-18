@@ -12,6 +12,13 @@ const apiAddress = "https://xurl.app/api/create";
 export async function shortenUrl(originalUrl) {
   console.log("shortenUrl function called");
   const slug = generateRandomString();
+  const button = document.getElementById("getCurrentURLButton");
+  const spinner = document.getElementById("loadingSpinner");
+  const buttonText = button.querySelector("h3");
+  // make button disabled
+  button.disabled = true;
+  spinner.style.display = "block";
+  buttonText.style.display = "none";
   const response = await fetch(apiAddress, {
     method: "POST",
     headers: {
@@ -24,6 +31,9 @@ export async function shortenUrl(originalUrl) {
       expiration: "1d",
     }),
   });
+  button.style.display = "none";
+  spinner.style.display = "none";
+  buttonText.style.display = "block";
   console.log("custom slug:", slug);
   return slug;
 }
